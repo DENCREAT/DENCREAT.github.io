@@ -11,12 +11,14 @@ var path = {
         build: {
             html: 'build/',
             css: 'build/css/',
-            image: 'build/images/'
+            image: 'build/images/',
+            fonts: 'build/fonts/'
         },
         src: {
             html: 'src/*.html',
             scss: 'src/scss/style.scss',
-            image: 'src/images/**/*.*'
+            image: 'src/images/**/*.*',
+            fonts: 'src/fonts/**/*.*'
         },
         watch: {
             html: 'src/**/*.html',
@@ -48,10 +50,16 @@ gulp.task('image:build', function () {
         .pipe(gulp.dest(path.build.image));
 });
 
+gulp.task('fonts:build', function () {
+    gulp.src(path.src.fonts)
+        .pipe(gulp.dest(path.build.fonts));
+});
+
 gulp.task('build', [
     'html:build',
     'scss:build',
-    'image:build'
+    'image:build',
+    'fonts:build'
 ]);
 
 gulp.task('watch', function(){

@@ -1,0 +1,59 @@
+/*--- HELVETICA ---*/
+@font-face {
+  font-family: "helvetica-roman";
+  src: url("../fonts/helvetica/helveticaneuecyr-roman-webfont.eot");
+  src: url("../fonts/helvetica/helveticaneuecyr-roman-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/helvetica/helveticaneuecyr-roman-webfont.woff") format("woff"), url("../fonts/helvetica/helveticaneuecyr-roman-webfont.ttf") format("truetype"), url("../fonts/helvetica/helveticaneuecyr-roman-webfont.svg#helveticaneuecyr-roman-webfont") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box; }
+
+html,
+body {
+  position: relative;
+  padding: 0;
+  margin: 0; }
+
+body {
+  padding-top: 40px;
+  font-family: "helvetica-roman"; }
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto; }
+  .container_small {
+    max-width: 640px; }
+
+.page-header {
+  position: fixed;
+  top: 0;
+  padding: 0 15px;
+  width: 100%;
+  height: 40px;
+  background: rgba(0, 133, 201, 0.9);
+  border-bottom: solid 1px #00527d; }
+  .page-header__link, .page-header__title {
+    color: #fff; }
+  .page-header__link {
+    font-size: 16px;
+    text-decoration: none; }
+    .page-header__link:hover {
+      text-decoration: underline; }
+  .page-header__title {
+    font-size: 18px;
+    text-transform: uppercase; }
+
+.page-image__img {
+  display: block;
+  max-width: 100%; }
+
+.pages-list__item {
+  margin-bottom: 8px; }

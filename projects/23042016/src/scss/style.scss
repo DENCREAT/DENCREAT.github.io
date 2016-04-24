@@ -1,0 +1,92 @@
+$fontDir: '../fonts/';
+
+
+/*--- HELVETICA ---*/
+$font-helvetica-dir: $fontDir + 'helvetica/';
+$font-name-roman: 'helveticaneuecyr-roman-webfont';
+
+$font-roman: 'helvetica-roman';
+
+@font-face {
+    font-family: $font-roman;
+    src: url($font-helvetica-dir + $font-name-roman + '.eot');
+    src: url($font-helvetica-dir + $font-name-roman + '.eot?#iefix') format('embedded-opentype'),
+        url($font-helvetica-dir + $font-name-roman + '.woff') format('woff'),
+        url($font-helvetica-dir + $font-name-roman + '.ttf') format('truetype'),
+        url($font-helvetica-dir + $font-name-roman + '.svg#' + $font-name-roman) format('svg');
+    font-weight: normal;
+    font-style: normal
+}
+
+$width: 1280px;
+%center-flex {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	position: relative;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	padding-top: 40px;
+	font-family: $font-roman;
+}
+
+.container {
+	max-width: $width;
+	margin: 0 auto;
+	&_small {
+		max-width: $width/2;
+	}
+}
+
+.page-header {
+	$color: #0085c9;
+	@extend %center-flex;
+	position: fixed;
+	top: 0;
+	padding: 0 15px;
+	width: 100%;
+	height: 40px;
+	background: transparentize($color,.1);
+	border-bottom: solid 1px darken($color,15%);
+	&__link,
+	&__title {
+		color: #fff;
+	}
+	&__link {
+		font-size: 16px;
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	&__title {
+		font-size: 18px;
+		text-transform: uppercase;
+	}
+}
+
+.page-image {
+	&__img {
+		display: block;
+		max-width: 100%;
+	}
+}
+
+.pages-list {
+	&__item {
+		margin-bottom: 8px;
+	}
+}
