@@ -1,5 +1,52 @@
 {
-	"id": "123455",
-	"name": "Lopuh",
-	"type": "book"
+	"posts": [
+		{
+			"id": "123455",
+			"name": "New post",
+			"type": "World",
+			"date": "01.02.2016"
+		},
+		{
+			"id": "124545",
+			"name": "About people",
+			"type": "People",
+			"date": "01.02.2016"
+		},
+		{
+			"id": "145454545",
+			"name": "New post about world",
+			"type": "World",
+			"date": "01.02.2016"
+		},
+		{
+			"id": "145454545",
+			"name": "New post",
+			"type": "Auto",
+			"date": "01.02.2016"
+		}
+	],
+	"gallery": [
+		{
+			"id": "454454878",
+			"name": "photo fdfsdfsdf",
+			"description": "description description description"
+		},
+		{
+			"id": "55888877",
+			"name": "photo sdfsdfsdfds",
+			"description": "description description description"
+		},
+		{
+			"id": "4455656677",
+			"name": "photo 55 rthgfhfghfg",
+			"description": "description description description"
+		},
+		{
+			"id": "12234678",
+			"name": "gdfgfd",
+			"description": "description description description"
+		}
+	]
+	
 }
+
