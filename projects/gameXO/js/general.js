@@ -15,7 +15,7 @@
 			var counterWin = 0;
 			var last = 1;
 			var cells = [];
-
+			var range = 3;
 			var size = defaultSize;
 
 			initGame(cells, size);
@@ -23,6 +23,12 @@
 			$body.on('change', radioBtnCls, function () {
 				var value = $(this).val();
 				size = value;
+				switch (size) {
+					case '5':
+						range = 4;break;
+					case '7':
+						range = 5;break;
+				}
 				initGame(cells, size);
 			});
 
@@ -92,37 +98,46 @@
 			}
 
 			function checkCells(arr, size, indexes) {
-				for (var i = 1; i < size - 1; i++) {
-					for (var j = 1; j < size - 1; j++) {
-						diag(i, j);
-					}
+
+				// for(let i = 1; i < size-1; i++) {
+				// 	for(let j = 1; j < size-1; j++) {
+				// 		diag(i, j);
+				// 	}
+				// }
+
+				horizontal(arr[indexes[0]]);
+				vertical(indexes[1]);
+
+				function horizontal(line) {
+					check(line);
 				}
 
-				for (var n = 1; n < size - 1; n++) {
-					horizontal(n);
-
-					for (var _i = 0; _i < size; _i++) {
-						vertical(n, _i);
-					}
-				}
-
-				function horizontal(index) {
-					var line = arr[indexes[0]];
-					check(line, index);
-				}
-
-				function vertical(index, indx) {
+				function vertical(index) {
 					var line = arr.map(function (item) {
-						return item[indx];
+						return item[index];
 					});
-					check(line, index);
+					check(line);
 				}
 
-				function check(a, i) {
-					var res = a[i - 1] === a[i] && a[i] === a[i + 1] && a[i] && !counterWin;
-					if (res) {
-						var winner = who(a[i]);
-						win(winner);
+				function check(a) {
+					var count = size - 2;
+
+					var _loop = function _loop(i) {
+						var rangeArr = a.filter(function (item, index) {
+							return index >= i && index < i + range;
+						});
+						var first = rangeArr[0];
+						var equals = rangeArr.every(function (item) {
+							return first === item;
+						});
+						if (equals && a[i] && !counterWin) {
+							var winner = who(first);
+							win(winner);
+						}
+					};
+
+					for (var i = 0; i < count; i++) {
+						_loop(i);
 					}
 				}
 
