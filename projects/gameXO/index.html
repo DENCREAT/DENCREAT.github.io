@@ -50,6 +50,9 @@
 			height: 50px;
 			color: #333;
 		}
+		.list-wrapper {
+			position: relative;
+		}
 
 		.list__item {
 			position: relative;
@@ -69,12 +72,70 @@
 			border-radius: 2px;
 			cursor: pointer;
 		}
+		.settings {
+			margin-bottom: 30px;
+			font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+			font-size: 18px;
+			color: #666;
+		}
+
+		.settings label {
+			display: inline-block;
+			cursor: pointer;
+		}
+		.settings label:not(:last-child) {
+			margin-right: 15px;
+		}
+
+		.settings input {
+			cursor: pointer;
+		}
+
+		.settings input[disabled],
+		.settings input[disabled] + span {
+			opacity: .4;
+		}
+
+		.settings input:checked + span {
+			color: #000;
+			font-weight: bold;
+		}
+
+		.settings input:focus {
+			outline: none;
+		}
+		.shadow {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			z-index: 2;
+			display: none;
+		}
 	</style>
 </head>
 <body>
 <div class="container">
-	<div class="list">
-		<!-- Здесь будет код -->
+	<div class="settings">
+		<label>
+			<input value="3" type="radio" name="size" checked>
+			<span>3*3</span>
+		</label>
+		<label>
+			<input value="5" type="radio" name="size">
+			<span>5*5</span>
+		</label>
+		<label>
+			<input value="7" type="radio" name="size">
+			<span>7*7</span>
+		</label>
+	</div>
+	<div class="list-wrapper">
+		<div class="shadow"></div>
+		<div class="list">
+			<!-- Здесь будет код -->
+		</div>
 	</div>
 
 <div class="container">

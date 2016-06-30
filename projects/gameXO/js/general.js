@@ -8,18 +8,29 @@
 		(function test() {
 
 			var $body = $('body');
+			var $radioBtn = $('.settings input[type="radio"]');
+			var radioBtnCls = '.settings input[type="radio"]';
+			var defaultSize = $('.settings input[type="radio"]:checked').val();
+			var $lock = $('.shadow');
 			var last = 1;
 			var cells = [];
 
 			var size = {
-				x: 3,
-				y: 3
+				x: defaultSize,
+				y: defaultSize
 			};
 
-			initArray(cells, size);
-			refreshDom(cells, size);
+			initGame(cells, size);
+
+			$body.on('change', radioBtnCls, function () {
+				var value = $(this).val();
+				size.x = value;
+				size.y = value;
+				initGame(cells, size);
+			});
 
 			$body.on('click', '.list__item', function () {
+				$radioBtn.attr('disabled', 'true');
 				var item = $(this);
 				var jsonData = item.attr('data-index');
 				var index = JSON.parse(jsonData);
@@ -29,30 +40,37 @@
 					item.text(last);
 					cells[index.x][index.y] = last;
 					refreshDom(cells, size);
+
 					checkCells(cells, size);
 				}
 			});
 
 			$body.on('click', '.restart', function () {
-				initArray(cells, size);
-				refreshDom(cells, size);
+				initGame(cells, size);
 			});
 
+			/****************************/
+			/*         FUNCTIONS        */
+			/****************************/
+
+			function initGame(arr, size) {
+				initArray(arr, size);
+				refreshDom(arr, size);
+				$radioBtn.removeAttr('disabled');
+				$lock.hide();
+			}
+
 			function initArray(arr, size) {
-				if (arr.length !== 0) {
-					for (var i = 0; i < arr.length; i++) {
-						for (var j = 0; j < arr[i].length; j++) {
-							arr[i][j] = null;
-						}
-					}
-				} else {
-					for (var _i = 0; _i < size.x; _i++) {
-						arr[_i] = new Array(size.y).fill(null);
+				for (var i = 0; i < size.x; i++) {
+					arr[i] = [];
+					for (var j = 0; j < size.y; j++) {
+						arr[i][j] = null;
 					}
 				}
 			}
 
 			function refreshDom(arr, size) {
+
 				var $list = $('.list');
 				$list.empty();
 				for (var i = 0; i < size.x; i++) {
@@ -126,7 +144,7 @@
 
 			function win(winner) {
 				alert('Winner is ' + winner);
-				$('.restart').trigger('click');
+				$lock.show();
 			}
 		})();
 		// Сумма через замыкание
