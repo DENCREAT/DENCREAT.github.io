@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Learn Javascript</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" 
+		integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" 
+		crossorigin="anonymous"></script>
+	<script src="js/general.js"></script>
+	<style>
+		*, *:after, *:before {
+			box-sizing: border-box;
+		}	
+		.container {
+			text-align: center;
+			padding: 10px 0;
+		}
+		.list {
+			position: relative;
+			display: inline-block;
+			margin: 0 auto;
+		}
+		.row {
+			display: flex;
+		}
+		.symbol {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		.symbol_circle {
+			border: solid 2px #333;
+			border-radius: 50%;
+			width: 35px;
+			height: 35px;
+		}
+
+		.symbol_mul {
+			position: relative;
+			transform: translateY(-50%);
+		}
+
+		.symbol_mul:after {
+			content: '×';
+			display: block;
+			font-size: 70px;
+			line-height: 50px;
+			height: 50px;
+			color: #333;
+		}
+
+		.list__item {
+			position: relative;
+			width: 50px;
+			height: 50px;
+			border: solid 1px;
+			justify-content: center;
+			font-size: 60px;
+		}
+		.restart {
+			width: 120px;
+			height: 40px;
+			background-color: #f7f7f7;
+			border: solid 1px;
+			color: #000;
+			font-size: 16px;
+			border-radius: 2px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<div class="list">
+		<!-- Здесь будет код -->
+	</div>
+
+<div class="container">
+	<button class="restart">Restart</button>
+</div>
+</div>
+</body>
+</html>
