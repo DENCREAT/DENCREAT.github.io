@@ -12,20 +12,17 @@
 			var radioBtnCls = '.settings input[type="radio"]';
 			var defaultSize = $('.settings input[type="radio"]:checked').val();
 			var $lock = $('.shadow');
+			var counterWin = 0;
 			var last = 1;
 			var cells = [];
 
-			var size = {
-				x: defaultSize,
-				y: defaultSize
-			};
+			var size = defaultSize;
 
 			initGame(cells, size);
 
 			$body.on('change', radioBtnCls, function () {
 				var value = $(this).val();
-				size.x = value;
-				size.y = value;
+				size = value;
 				initGame(cells, size);
 			});
 
@@ -40,8 +37,7 @@
 					item.text(last);
 					cells[index.x][index.y] = last;
 					refreshDom(cells, size);
-
-					checkCells(cells, size);
+					checkCells(cells, size, [index.x, index.y]);
 				}
 			});
 
@@ -54,6 +50,7 @@
 			/****************************/
 
 			function initGame(arr, size) {
+				counterWin = 0;
 				initArray(arr, size);
 				refreshDom(arr, size);
 				$radioBtn.removeAttr('disabled');
@@ -61,9 +58,9 @@
 			}
 
 			function initArray(arr, size) {
-				for (var i = 0; i < size.x; i++) {
+				for (var i = 0; i < size; i++) {
 					arr[i] = [];
-					for (var j = 0; j < size.y; j++) {
+					for (var j = 0; j < size; j++) {
 						arr[i][j] = null;
 					}
 				}
@@ -73,9 +70,9 @@
 
 				var $list = $('.list');
 				$list.empty();
-				for (var i = 0; i < size.x; i++) {
+				for (var i = 0; i < size; i++) {
 					var $row = $('<div>', { class: 'row' });
-					for (var j = 0; j < size.y; j++) {
+					for (var j = 0; j < size; j++) {
 						var val = void 0;
 						var $item = $('<div>', { class: 'list__item' });
 						switch (arr[i][j]) {
@@ -94,38 +91,49 @@
 				}
 			}
 
-			function checkCells(arr, size) {
-				var counter = 0;
-				var t = 1;
-				for (var i = 1; i < size.x - 1; i++) {
-					for (var j = 1; j < size.y - 1; j++) {
-						for (var n = i - 1; n <= i + 1; n++) {
-							horizontal(n, j);
-						}
+			function checkCells(arr, size, indexes) {
+				for (var i = 1; i < size - 1; i++) {
+					for (var j = 1; j < size - 1; j++) {
 						diag(i, j);
 					}
-					for (var _n = t - 1; _n <= t + 1; _n++) {
-						vertical(i, _n);
-					}
-					t++;
 				}
 
-				function horizontal(index, j) {
-					if (arr[index][j - 1] === arr[index][j] && arr[index][j] === arr[index][j + 1] && arr[index][j] !== null) {
-						var winner = who(arr[index][j]);
+				for (var n = 1; n < size - 1; n++) {
+					horizontal(n);
+
+					for (var _i = 0; _i < size; _i++) {
+						vertical(n, _i);
+					}
+				}
+
+				function horizontal(index) {
+					var line = arr[indexes[0]];
+					check(line, index);
+				}
+
+				function vertical(index, indx) {
+					var line = arr.map(function (item) {
+						return item[indx];
+					});
+					check(line, index);
+				}
+
+				function check(a, i) {
+					var res = a[i - 1] === a[i] && a[i] === a[i + 1] && a[i] && !counterWin;
+					if (res) {
+						var winner = who(a[i]);
 						win(winner);
 					}
 				}
 
-				function vertical(i, index) {
-					if (arr[i - 1][index] === arr[i][index] && arr[i][index] === arr[i + 1][index] && arr[i][index] !== null) {
-						var winner = who(arr[i][index]);
-						win(winner);
-					}
-				}
 				function diag(i, j) {
-					if (arr[i - 1][j - 1] === arr[i][j] && arr[i][j] === arr[i + 1][j + 1] && arr[i][j] !== null || arr[i - 1][j + 1] === arr[i][j] && arr[i][j] === arr[i + 1][j - 1] && arr[i][j] !== null) {
-						var winner = who(arr[i][j]);
+					var winner = void 0;
+					if (arr[i - 1][j - 1] === arr[i][j] && arr[i][j] === arr[i + 1][j + 1] && arr[i][j]) {
+						winner = who(arr[i][j]);
+						win(winner);
+					}
+					if (arr[i - 1][j + 1] === arr[i][j] && arr[i][j] === arr[i + 1][j - 1] && arr[i][j]) {
+						winner = who(arr[i][j]);
 						win(winner);
 					}
 				}
@@ -144,6 +152,7 @@
 
 			function win(winner) {
 				alert('Winner is ' + winner);
+				counterWin++;
 				$lock.show();
 			}
 		})();
