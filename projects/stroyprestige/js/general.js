@@ -31,11 +31,11 @@
 			var controls = getControls($slider);
 
 			$slider.slick({
-				dots: false,
-				fade: true,
 				arrows: false,
 				asNavFor: $global.sliderFront,
-				slidesToShow: 4
+				slidesToShow: 4,
+				dots: true,
+				focusOnSelect: true
 			});
 		})();
 
