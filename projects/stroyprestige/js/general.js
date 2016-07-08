@@ -5,12 +5,14 @@
 		var $body = $('body');
 		var selectors = {
 			sliderFront: '.slider-front__inner-wrapper',
-			servicesFront: '.services-front__inner-wrapper'
+			servicesFront: '.services-front__inner-wrapper',
+			projectsFront: '.slider-projects__inner-wrapper'
 		};
 
 		var $global = {
 			sliderFront: $(selectors.sliderFront),
-			servicesFront: $(selectors.servicesFront)
+			servicesFront: $(selectors.servicesFront),
+			projectsFront: $(selectors.projectsFront)
 		};
 
 		(function sliderFrontInit() {
@@ -18,7 +20,9 @@
 			var controls = getControls($slider);
 
 			$slider.slick({
-				dots: true,
+				autoplay: true,
+				autoplaySpeed: 7000,
+				dots: false,
 				fade: true,
 				prevArrow: controls.prev,
 				nextArrow: controls.next,
@@ -36,6 +40,19 @@
 				slidesToShow: 4,
 				dots: true,
 				focusOnSelect: true
+			});
+		})();
+
+		(function projectsFrontInit() {
+			var $slider = $global.projectsFront;
+			var controls = getControls($slider);
+
+			$slider.slick({
+				arrows: true,
+				slidesToShow: 4,
+				slidesToScroll: 1,
+				prevArrow: controls.prev,
+				nextArrow: controls.next
 			});
 		})();
 
