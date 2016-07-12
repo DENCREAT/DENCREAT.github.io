@@ -3,8 +3,6 @@
 (function ($) {
 	$(function () {
 
-		initMap();
-
 		var $body = $('body');
 		var selectors = {
 			sliderFront: '.slider-front__inner-wrapper',
@@ -128,5 +126,7 @@
 
 			marker.setMap(map);
 		}
+
+		initMap();
 	});
 })(jQuery);
