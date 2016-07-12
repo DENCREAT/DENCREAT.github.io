@@ -2,6 +2,9 @@
 
 (function ($) {
 	$(function () {
+
+		initMap();
+
 		var $body = $('body');
 		var selectors = {
 			sliderFront: '.slider-front__inner-wrapper',
@@ -9,19 +12,27 @@
 			projectsFront: '.slider-projects__inner-wrapper',
 			clientsFront: '.slider-clients__inner-wrapper',
 			toTopBtnCls: '.js-to-top',
-			expandMapFrontCls: '.js-expand-map'
+			expandMapFrontCls: '.js-expand-map',
+			headerCls: '.header'
 		};
 
 		var $global = {
 			sliderFront: $(selectors.sliderFront),
 			servicesFront: $(selectors.servicesFront),
 			projectsFront: $(selectors.projectsFront),
-			clientsFront: $(selectors.clientsFront)
+			clientsFront: $(selectors.clientsFront),
+			header: $(selectors.headerCls)
 		};
 
 		$body.on('click', selectors.toTopBtnCls, toTop);
 		$body.on('click', selectors.expandMapFrontCls, expandMapFront);
-
+		$(window).on('scroll', function () {
+			if ($(this).scrollTop() && !$global.header.is('scrolled')) {
+				$global.header.addClass('scrolled');
+			} else {
+				$global.header.removeClass('scrolled');
+			}
+		});
 		function expandMapFront() {
 			var $map = $('#map-front');
 			var posPage = $(document).scrollTop();
@@ -101,6 +112,21 @@
 				prev: $(prevCls, $slider.closest('.slider')),
 				next: $(nextCls, $slider.closest('.slider'))
 			};
+		}
+
+		function initMap() {
+			var myLatLng = { lat: 53.8668267, lng: 27.5078881 };
+			var map = new google.maps.Map(document.getElementById('map-front'), {
+				center: myLatLng,
+				zoom: 15,
+				scrollwheel: false
+			});
+			var marker = new google.maps.Marker({
+				position: myLatLng,
+				title: 'ООО СтройПрестиж'
+			});
+
+			marker.setMap(map);
 		}
 	});
 })(jQuery);

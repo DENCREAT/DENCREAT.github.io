@@ -649,6 +649,8 @@ p, .text {
     cursor: pointer;
     overflow: hidden;
     border-radius: 5px; }
+  .slider-clients .arrow-btn {
+    background: #303940; }
   .slider-clients__slide:hover {
     box-shadow: 0 0 0 2px #ffee00, 0 2px 7px 0 rgba(0, 0, 0, 0.3); }
     .slider-clients__slide:hover .slider-clients__img {
@@ -730,13 +732,15 @@ p, .text {
 .header {
   min-width: 1234px;
   position: fixed;
-  z-index: 10;
+  z-index: 15;
   top: 0;
   left: 0;
   right: 0;
   padding: 0;
   min-height: 70px;
   background: rgba(0, 0, 0, 0.6); }
+  .header.scrolled {
+    background: rgba(0, 0, 0, 0.85); }
   .header__logo {
     display: block; }
     .header__logo img {

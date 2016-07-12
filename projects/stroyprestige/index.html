@@ -45,6 +45,7 @@
 		<span class="btn btn_yellow header__call"><i class="fa fa-phone"></i><span>Заказать звонок</span></span>
 	</div>
 </header>
+
 <section class="slider-front slider">
 	<div class="slider-front__container slider__container">
 		<div class="slider-front__controls slider__controls">
@@ -142,7 +143,6 @@
 		</div>
 	</div>
 </section>
-
 <section class="about-front section">
 	<div class="container">
 		<h2 class="section__title">Строительная компания «Стройпрестиж»</h2>
@@ -164,7 +164,6 @@
 		</div>
 	</div>
 </section>
-
 <section class="projects-front section section_lightgray">
 	<div class="container">
 		<h2 class="section__title">Наши работы</h2>
@@ -230,7 +229,6 @@
 		</div>
 	</div>
 </section>
-
 <section class="reviews-front section">
 	<div class="container">
 		<h2 class="section__title">Отзывы наших клиентов</h2>
@@ -282,7 +280,6 @@
 		</div>
 	</div>
 </section>
-
 <section class="clients-front section section_dark">
 	<div class="container">
 		<h2 class="section__title">Наши клиенты</h2>
@@ -342,7 +339,6 @@
 		</div>
 	</div>
 </section>
-
 <section class="contacts-front section">
 	<div class="container">
 		<h2 class="section__title">Свяжитесь с нами</h2>
@@ -373,30 +369,7 @@
 		</div>
 	<span class="js-expand-map expand-map"></span>
 </section>
-
-<section id="map-front" class="map-front">
-</section>
-
-<script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAF_li_ZbpS06U636XAhRKJC9MY31w_I4&callback=initMap">
-    </script>
-
-<script>
-function initMap() {
-	var myLatLng = {lat: 53.8668267, lng: 27.5078881};
-  var map = new google.maps.Map(document.getElementById('map-front'), {
-    center: myLatLng,
-    zoom: 15,
-    scrollwheel: false
-  });
-  var marker = new google.maps.Marker({
-	    position: myLatLng,
-	    title: 'ООО СтройПрестиж'
-	  });
-   
-  marker.setMap(map);
-}
-</script>
+<section id="map-front" class="map-front"></section>
 
 <footer class="footer centered">
 	<div class="container">
@@ -405,6 +378,9 @@ function initMap() {
 	</div>
 </footer>
 <!-- Scripts -->
+<script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAF_li_ZbpS06U636XAhRKJC9MY31w_I4">
+    </script>
 <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
 <script src="js/vendor/slick.min.js"></script>
 <script src="js/general.js"></script>
