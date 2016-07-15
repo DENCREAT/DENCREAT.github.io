@@ -1,0 +1,39 @@
+.services-front {
+	&__slide {
+		cursor: pointer;
+		&:focus { outline: none; }
+	}
+	&__content {
+		text-align: center;
+		padding: 0 30px;
+	}
+	&__header {
+		.slick-current & { color: $COLOR-LIGHT-BLUE-MIDDLE; }
+	}
+	&__text {
+		@include rem(14px);
+		line-height: 1.4;
+		color: #55606e;
+	}
+	&__ico {
+		@include size(160px);
+		position: relative;
+		display: inline-block;
+		border-radius: 50%;
+		background: #84ffe9;
+		transition: .52s;
+		padding: 30px;
+		&_land,
+		&_decor { padding: 37px; }
+		&_car { padding: 33px; }
+		&_house { padding: 30px; }
+		svg {
+			@include center-self;
+			max-width: 100%;
+			fill: $COLOR-DARK-BLUE-GRAY;
+			transition: .52s;
+			.slick-current & { fill: $COLOR-DARK-BLUE-MIDDLE; }
+		}
+		.slick-current & { background: $color-main; }
+	}
+}

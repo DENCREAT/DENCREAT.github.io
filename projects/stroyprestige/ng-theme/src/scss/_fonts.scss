@@ -1,0 +1,14 @@
+$fontDir: '../fonts/';
+$f-regular: 'regular/';
+$f-semibold: 'semibold/';
+$f-bold: 'bold/';
+$f-ex-bold: 'extrabold/';
+$f-italic: 'italic/';
+
+/*--- MULLER EXTRA BOLD ---*/
+$font-muller-extra-path: $fontDir + 'muller/';
+$font-mullerEx: 'Muller Extra Bold';
+$fname-mullerEx: 'muller-extrabold-webfont';
+
+// @include font-face($font-mullerEx, $font-muller-extra-path + $f-ex-bold + $fname-mullerEx, normal, normal, eot ttf woff svg);
+/*--- END MULLER EXTRA BOLD ---*/

@@ -1,0 +1,80 @@
+.slider-front {
+	.slick-dots {
+		position: absolute;
+		left: 50%;
+		bottom: 15px;
+		font-size: 0;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		transform: translateX(-50%);
+		li {
+			display: inline-block;
+			&:not(:last-child) {
+				margin-right: 8px;
+			}
+			&.slick-active button {
+				background: rgba(255,255,255,.7);
+			}
+		}
+		button {
+			display: block;
+			font-size: 0;
+			padding: 0;
+			@include size(13px);
+			background: transparentize($COLOR-DARK-BLUE-MIDDLE, .4);
+			border: solid 1px #fff;
+			border-radius: 50%;
+			cursor: pointer;
+		}
+	}
+	&__slide-bg {
+		position: relative;
+		&:after {
+			content: '';
+			position: absolute;
+			z-index: 0;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: url($bg + 'frontslider/shadow-pattern.png') repeat-x;
+		}
+		&:before {
+			content: '';
+			position: absolute;
+			z-index: 0;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			background: rgba(0,0,0,.35);
+		}
+		img {
+			display: block;
+			width: 100%;
+		}
+	}
+	&:hover &__header{
+			color: #fff;
+		}
+	&__header {
+		@include rem(60px);
+		margin: 0;
+		margin-bottom: 28px;
+		font-weight: bold;
+		line-height: 1.2;
+		color: #fff;
+		text-align: center;
+		text-shadow: 5px 5px 5px rgba(0,0,0,.05);
+
+	}
+	&__content {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 100%;
+		transform: translate(-50%, calc(-50%  + 35px));
+		text-align: center;
+	}
+}

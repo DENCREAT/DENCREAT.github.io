@@ -1,0 +1,97 @@
+<section class="slider-front slider">
+	<div class="slider-front__container slider__container">
+		<div class="slider-front__controls slider__controls">
+        <span class="slider__arrow slider__arrow_prev arrow-btn arrow-btn_left"></span>
+        <span class="slider__arrow slider__arrow_next arrow-btn arrow-btn_right"></span>
+    </div>
+    <div class="slider-front__inner-wrapper slider__inner-wrapper">
+			
+			<div class="slider-front__slide slider__slide">
+				<div class="slider-front__slide-bg slider__slide-bg">
+					<img src="<?php echo get_template_directory_uri(); ?>/build/images/bg/frontslider/1.jpg">
+				</div>
+				<div class="slider-front__content container">
+					<p class="slider-front__header slider__slide-header">Коттеджи, дома <br>и бани под ключ</p>
+					<a href="#" class="slider-front__btn slider__btn">Подробнее</a>
+				</div>
+			</div>
+			<div class="slider-front__slide slider__slide">
+				<div class="slider-front__slide-bg slider__slide-bg">
+					<img src="<?php echo get_template_directory_uri(); ?>/build/images/bg/frontslider/2.jpg">
+				</div>
+				<div class="slider-front__content container">
+					<p class="slider-front__header slider__slide-header">Услуги грузоперевозок <br>и манипулятора</p>
+					<a href="#" class="slider-front__btn slider__btn">Подробнее</a>
+				</div>
+			</div>
+			<div class="slider-front__slide slider__slide">
+				<div class="slider-front__slide-bg slider__slide-bg">
+					<img src="<?php echo get_template_directory_uri(); ?>/build/images/bg/frontslider/3.jpg">
+				</div>
+				<div class="slider-front__content container">
+					<p class="slider-front__header slider__slide-header">Отделочные работы <br>любого уровня сложности</p>
+					<a href="#" class="slider-front__btn slider__btn">Подробнее</a>
+				</div>
+			</div>
+			<div class="slider-front__slide slider__slide">
+				<div class="slider-front__slide-bg slider__slide-bg">
+					<img src="<?php echo get_template_directory_uri(); ?>/build/images/bg/frontslider/4.jpg">
+				</div>
+				<div class="slider-front__content container">
+					<p class="slider-front__header slider__slide-header">Ландшафтный дизайн. Благоустройство территории</p>
+					<a href="#" class="slider-front__btn slider__btn">Подробнее</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="services-front section section_lightgray">
+	<div class="services-front__container slider__container container">
+    <div class="services-front__inner-wrapper slider__inner-wrapper">
+    <div class="services-front__slide slider__slide">
+				<div class="services-front__content">
+					<span class="services-front__ico services-front__ico_house">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 86.63">
+							<path d="M16.8,86.18a4,4,0,0,1-2.15-2.46c-0.14-.51-0.22-6.23-0.22-16.17V52.17L30.84,35c9-9.42,16.77-17.35,17.2-17.63a4.67,4.67,0,0,1,4-.17c0.64,0.34,4.58,4.39,24.44,25.08l9.08,9.47-0.05,16-0.05,16-0.63.89a5.05,5.05,0,0,1-1.47,1.33c-0.81.43-1.17,0.44-10.89,0.5l-10,.06V56l-0.53-1.07a4.93,4.93,0,0,0-2.69-2.37,87.81,87.81,0,0,0-9.26-.22c-8,0-8.73,0-9.51.39A5,5,0,0,0,38,55.17c-0.36.79-.39,1.75-0.39,16.15V86.62H27.63c-9.68,0-10,0-10.83-.44h0ZM1.7,53A3,3,0,0,1,.16,51c-0.47-1.75-1.28-.84,19.53-21.82C47.86,0.81,48.47.21,49.39,0a3.56,3.56,0,0,1,1.48.09c0.67,0.22,14,13.5,40.59,40.31,8.75,8.83,8.84,9,8.39,10.56a2.69,2.69,0,0,1-1.48,1.93,2.62,2.62,0,0,1-2.66.13c-0.52-.22-7.77-7.35-23.24-22.88L50,7.62,27.42,30.28C14.66,43.09,4.6,53,4.27,53.16A3,3,0,0,1,1.7,53h0Z"/>
+						</svg>
+					</span>
+					<p class="services-front__header slider__slide-header">Коттеджи, дома <br>и бани под ключ</p>
+					<p class="services-front__text slider__slide-text">Сопровождаем новое строительство и любые ремонтные работы</p>
+				</div>
+			</div>
+			<div class="services-front__slide slider__slide">
+				<div class="services-front__content">
+					<span class="services-front__ico services-front__ico_car">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 76.89">
+							<path d="M22.64,76.55a9.55,9.55,0,1,1,4.49.05,8.19,8.19,0,0,1-4.49-.05h0ZM77,76.71a11.69,11.69,0,0,1-2.12-.76,9.54,9.54,0,1,1,8.84-16.89,9.92,9.92,0,0,1,4.71,8.89A9.7,9.7,0,0,1,77,76.71ZM2.13,64.85A3,3,0,0,1,.54,63.27L0,62.23v-59l0.51-1A3.27,3.27,0,0,1,1.92.61l0.91-.53L34,0C56.62,0,65.41,0,66.15.18a3.61,3.61,0,0,1,2.59,2c0.36,0.7.38,1.18,0.38,7v6.25l7.57,0.06,7.57,0.06L85.18,16c1.75,1,3,2.69,6.26,8.58,1.7,3,4.05,7.2,5.22,9.24a48.2,48.2,0,0,1,2.67,5.27l0.55,1.56,0.06,10.75L100,62.2l-0.55,1.06a3.06,3.06,0,0,1-1.59,1.6c-1,.5-1.21.54-3.26,0.54H92.38l-0.12-.54a14.06,14.06,0,0,0-6.11-9.05A13.56,13.56,0,0,0,65.66,64l-0.34,1.41H38.53l-0.32-1.32a17.06,17.06,0,0,0-1.09-2.88,13.53,13.53,0,0,0-22.65-2.54,16.2,16.2,0,0,0-2.68,5.42L11.47,65.4H3.17l-1-.54h0ZM93.54,42.07a5.74,5.74,0,0,0-.93-2.12c-0.25-.41-2.26-4.1-4.46-8.2s-4.26-7.72-4.58-8L83,23.12l-5-.06L73,23V42.35H83.29c8.84,0,10.25,0,10.25-.28h0Z"/>
+						</svg>
+					</span>
+					<p class="services-front__header slider__slide-header">Грузоперевозки и манипулятор</p>
+					<p class="services-front__text slider__slide-text">Используем автомобиль, оборудованный краном-манипулятором</p>
+				</div>
+			</div>
+			<div class="services-front__slide slider__slide">
+				<div class="services-front__content">
+					<span class="services-front__ico services-front__ico_decor">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 95.83 100">
+							<path d="M77.84,99.22c-1.3-.64-10.71-10.53-11.13-11.7-0.07-.19,3.56-4,8.05-8.51l8.18-8.16,4.87,4.24c7.11,6.18,8.74,9,7.75,13.43-0.8,3.62-4.92,8.39-9.06,10.5A11.19,11.19,0,0,1,77.84,99.22Zm-16-17.41c-2.34-2.83-5.16-6.23-6.29-7.57C54.1,72.45,53.67,71.6,54,71s3.27-3.57,6.75-7l6.33-6.21,1.12,0.89c0.62,0.49,4.12,3.38,7.78,6.42l6.66,5.53L74.5,78.8C70,83.29,66.31,87,66.24,87s-2-2.31-4.36-5.14h0ZM54.77,63.54a29,29,0,0,1-2.95-3.39c-0.79-1.21-.79-1.42,0-3.82,0.46-1.4,4.84-10.43,9.74-20.08s8.91-18,8.91-18.46-2.66-3.5-6.54-7.25C59,5.76,57.39,3.92,57.39,3A3,3,0,0,1,61.89.43c2,1.36,13.84,13.35,14.62,14.86s0.72,1.7,0,3.93c-0.44,1.32-4.81,10.33-9.71,20s-8.91,17.92-8.91,18.29a6,6,0,0,0,1.69,2.31,7.08,7.08,0,0,1,1.69,2.1c0,0.58-3.31,3.71-3.92,3.71a10.31,10.31,0,0,1-2.57-2.11h0Zm-39.5-.29c-1.91-1-12-11-13.72-13.58C0.05,47.44-.34,45.69.29,44S40,3,42,1.95c3.44-1.82,6.54-.37,13.31,6.22,6.26,6.09,7.89,8.45,7.89,11.43v2.2L42,43C21.08,64,20.81,64.2,18.9,64.17A9.43,9.43,0,0,1,15.27,63.25Z"/>
+						</svg>
+					</span>
+					<p class="services-front__header slider__slide-header">Внутренние работы</p>
+					<p class="services-front__text slider__slide-text">Предоставляем клиентам гарантию на все производимые работы</p>
+				</div>
+			</div>
+			<div class="services-front__slide slider__slide">
+				<div class="services-front__content">
+					<span class="services-front__ico services-front__ico_land">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 91.41 100">
+							<path d="M47.4,63l-1,1c-3.46,3.83-5.79,9.23-6.87,15.94-0.65,4-.75,11.94-0.18,14.6,0.85,4,.85,4,0.06,4.78a2.16,2.16,0,0,1-2.73.41h0c-0.63-.26-0.79-0.82-1.16-4.35-0.24-2.23-.53-5.5-0.64-7.27-0.29-4.47-2.94-12.43-5.18-15.58l-0.75-1.05-1,1.57a12,12,0,0,1-2.35,2.6c-1.21.92-1.62,1-4.05,1-3.35,0-5.22-.83-8.33-3.71a20.12,20.12,0,0,1-5.65-8.69,112.68,112.68,0,0,0-6.41-13.4L0,49H3.33c7.79,0,14.33,1.14,18.78,3.26,2.67,1.28,5.89,4.1,6.88,6.06a14.38,14.38,0,0,1,1.07,8.45,11.33,11.33,0,0,1-.48,2.53,16.16,16.16,0,0,1-2.93-2.48,53.27,53.27,0,0,0-9.87-7.58c-2.41-1.38-2.58-1.18-.29.35a50.79,50.79,0,0,1,9.29,8.24c3,3.19,3.56,3.91,3.8,1.47,0.31,0.22.31,1.13,2,3.67a45.87,45.87,0,0,1,3,5.32l1,2.31,0.27-2.13a32.15,32.15,0,0,1,6.74-15.12l2.19-3m13.58,8.4A35.9,35.9,0,0,1,48.63,64L47.4,63l1.83-2.09a107,107,0,0,1,7.85-7.78l1.5-1.39L64,51.68c5,0,5.76-.14,9.16-1.17s5.47-1.93,3.11-1.36a40.08,40.08,0,0,1-9.3.75c-3.56-.35-4.82-0.59-4.82-0.9a18.9,18.9,0,0,1,3-2.64c1.65-1.29,4-3.34,5.27-4.54,2.07-2,2.43-2.22,4.38-2.51a17.19,17.19,0,0,0,7.65-3.37,9.79,9.79,0,0,0,1.73-1.45,15.61,15.61,0,0,0-2.54.79c-2.25.82-6.63,1.68-6.63,1.3a20.6,20.6,0,0,1,1.21-2.17A35.66,35.66,0,0,0,80.91,21l0.24-2.49-1.24,3a103.18,103.18,0,0,1-6.14,11.84c-0.63.95-1.11,1.36-1.32,1.14s-0.28-2.29-.2-5c0.08-2.57.11-4.67,0.08-4.67s-0.56,1.35-1.15,3c-1.28,3.53-1.68,6.57-1.18,8.79l0.37,1.6L68.5,39.82c-1,1-3.46,2.93-5.42,4.39l-3.56,2.66-0.27-1a41.92,41.92,0,0,1-.62-11.19,31.26,31.26,0,0,0,.21-3.8c-0.19-.19-1.94,6-2.35,8.26-0.52,2.91-.45,6.52.16,8.24,0.48,1.33.46,1.47-.18,2a68.52,68.52,0,0,0-7.86,7.36,31.72,31.72,0,0,1-3.77,3.66c-0.81.1-4.18-3.79-5.37-6.2-2.16-4.38-2.32-9-.48-14.37A33.37,33.37,0,0,1,52.2,23.72a61.54,61.54,0,0,1,6.07-2.59C67,17.8,69.78,16.3,73.38,13A60.28,60.28,0,0,0,81,3.34L83.17,0l1.28,2.28a52.2,52.2,0,0,1,6.89,24c0.53,9.23-1.74,19.89-5.79,27.29C81.31,61.3,74.69,67.07,68.05,68.8a23,23,0,0,1-9.62,0h0Z"/>
+						</svg>
+					</span>
+					<p class="services-front__header slider__slide-header">Благоустройство территории</p>
+					<p class="services-front__text slider__slide-text">Предоставляем клиентам гарантию на все производимые работы</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

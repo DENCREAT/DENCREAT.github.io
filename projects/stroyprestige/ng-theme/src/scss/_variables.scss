@@ -1,0 +1,25 @@
+$images: '../images/';
+$bg: $images + 'bg/';
+$icons: $images + 'ico/';
+
+$font-root-size: 10px;
+
+
+$width-max: 975px;
+
+$COLOR-DARK-BLUE-MIDDLE: #303940;
+$COLOR-DARK-BLUE-MIDDLE-lighter: #363f48;
+$COLOR-DARK-BLUE-GRAY: #495565;
+$COLOR-DARK-BLUE-GRAY-lighter: #55606e;
+$COLOR-LIGHT-BLUE-MIDDLE: #3ea5ce;
+$color-main: #ffee00;
+
+
+$color-text-dark: $COLOR-DARK-BLUE-MIDDLE;
+$color-text-dark-middle: $COLOR-DARK-BLUE-GRAY;
+$color-text-dark-middle-lighter: $COLOR-DARK-BLUE-GRAY-lighter;
+$color-section-lightgray: #f1f2f3;
+$color-section-dark: $COLOR-DARK-BLUE-GRAY;
+$color-section-darker: #313841;
+
+$size-offset-section: 50px;

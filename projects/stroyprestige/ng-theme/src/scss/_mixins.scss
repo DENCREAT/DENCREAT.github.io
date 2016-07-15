@@ -1,0 +1,66 @@
+@mixin size($width: 30px, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin rem($value) {
+  font-size: $value;
+  font-size: to-rem($value);
+}
+
+@mixin width-calc-stretch($count, $offset, $fallback) {
+  display: inline-block;
+  $count-offset: $count - 1;
+  width: $fallback;
+  width: calc(100% / #{$count} - #{$offset} * #{$count-offset} / #{$count});
+  margin-right: $offset;
+  &:last-child { margin-right: 0; }
+  &:nth-child(#{$count}n) { margin-right: 0; }
+}
+
+@mixin center-self {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*--- MIXIN FOR FONTS ---*/
+@function str-replace($string, $search, $replace: "") {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+  $src: null;
+
+  $extmods: (
+      eot: "?",
+      svg: "#" + str-replace($name, " ", "_")
+  );
+
+  $formats: (
+      otf: "opentype",
+      ttf: "truetype"
+  );
+
+  @each $ext in $exts {
+    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+  }
+
+  @font-face {
+    font-family: quote($name);
+    font-style: $style;
+    font-weight: $weight;
+    src: $src;
+  }
+}
+
+/*--- END MIXIN FOR FONTS ---*/

@@ -1,0 +1,111 @@
+.reviews {
+	$offset: 10px;
+	font-size: 0;
+	display: flex;
+	align-items: stretch;
+	&__item {
+		@include rem(14px);
+		@include width-calc-stretch(3, 57px, 30%);
+		position: relative;
+		z-index: 1;
+		flex-wrap: wrap;
+		border-radius: 5px;
+		overflow: hidden;
+		background: $color-section-lightgray;
+		box-shadow: 0 1px 0 rgba(0,0,0,.14);
+		&_banner {
+			background: none;
+			box-shadow: none;
+		}
+		&:hover {
+			box-shadow: 0 1px 0 rgba(0,0,0,0);
+			background: transparent;
+			.reviews {
+				&__author { opacity: 0; }
+				&__btn { transform: translate3d(0, 0, 0); }
+				&__img img { transform: scale(1.02); }
+			}
+		}
+	}
+	&__img {
+		img {
+			display: block;
+			max-width: 100%;
+			transition: .26s;
+			transform: scale(1);
+		}
+	}
+	&__btn {
+		position: absolute;
+		bottom: $offset;
+		left: $offset;
+		transform: translate3d(0, 100px, 0);
+	}
+	&__content {
+		@extend %260ms;
+		padding: $offset;
+		padding-bottom: $offset*2;
+	}
+	&__title {
+		@include rem(21px);
+		margin-top: 0;
+		color: $COLOR-DARK-BLUE-MIDDLE-lighter;
+	}
+	&__author {
+		@extend %260ms;
+		display: block;
+		text-align: right;
+		opacity: 1;
+	}
+}
+
+.more-info {
+	.reviews {
+		&__img img { transform: scale(1) !important; }
+		&__content {
+			padding-bottom: 12px;
+			background: $color-section-lightgray !important;
+			box-shadow: 0 1px 0 rgba(0,0,0,.14);
+		}
+		&__title {
+			@include rem(18px);
+			margin: 0;
+			a {
+				color: inherit;
+				text-decoration: none;
+				&:hover { color: $COLOR-LIGHT-BLUE-MIDDLE; }
+			}
+		}
+	}
+	&__tip {
+		@include rem(18px);
+		position: relative;
+		display: block;
+		padding: 18px;
+		margin: 23px 0 25px;
+		color: #fff;
+		font-family: Georgia;
+		line-height: 1.4;
+		font-weight: normal;
+		border-radius: 5px;
+		background: $COLOR-DARK-BLUE-GRAY;
+		&:after {
+			content: '';
+			position: absolute;
+			bottom: 1px;
+			left: 20px;
+			transform: translateY(100%);
+			border: solid 10px $COLOR-DARK-BLUE-GRAY;
+			border-right-color: transparent; 
+			border-bottom-color: transparent; 
+		}
+	}
+	&__tip-name {
+		@include rem(14px);
+		color: $COLOR-DARK-BLUE-GRAY;
+		a {
+			color: $COLOR-LIGHT-BLUE-MIDDLE;
+			text-decoration: none;
+		}
+	}
+}

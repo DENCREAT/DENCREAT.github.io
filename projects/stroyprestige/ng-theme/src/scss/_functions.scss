@@ -1,0 +1,4 @@
+@function to-rem($size) {
+  $remSize: $size / $font-root-size;
+  @return #{$remSize}rem;
+}

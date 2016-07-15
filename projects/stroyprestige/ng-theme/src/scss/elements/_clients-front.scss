@@ -1,0 +1,28 @@
+.slider-clients {
+	position: relative;
+	margin-top: 40px;
+	&__inner-wrapper { overflow: hidden; }
+	&__slide {
+		margin: 10px 30px;
+		border-radius: 5px;
+		cursor: pointer;
+		overflow: hidden;
+		border-radius: 5px;
+	}
+	.arrow-btn {
+		background: $COLOR-DARK-BLUE-MIDDLE;
+	}
+	&__slide:hover {
+		box-shadow: 0 0 0 2px $color-main,
+								0 2px 7px 0 rgba(0,0,0,.3);
+		.slider-clients__img { filter: grayscale(0); }
+	}
+	&__img { filter: grayscale(100%); }
+	&__logo {
+		@include center-self;
+	}
+	.slick-list {
+		margin-left: -28px;
+		margin-right: -24px;
+	}
+}

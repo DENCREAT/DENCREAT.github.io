@@ -1,0 +1,16 @@
+.map-front {
+	position: relative;
+	height: 300px;
+	transition: height .26s;
+	.gm-style {
+		height: 600px !important;
+		margin-top: -150px !important;
+		transition: .26s;
+	}
+	&.expand {
+		height: 600px;
+		.gm-style {
+			margin-top: 0 !important;
+		}
+	}
+}

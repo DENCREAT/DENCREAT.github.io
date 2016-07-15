@@ -1,0 +1,48 @@
+.contacts-front {
+	position: relative;
+	z-index: 1;
+	padding-bottom: $size-offset-section + 30px;
+	box-shadow: 0 5px 20px 5px rgba(0,0,0,.25);
+	&__list {
+		@include rem(16px);
+		margin: 0;
+		padding: 0;
+		@include width-calc-stretch(3, 0, 33.33333%);
+		list-style: none;
+		font-weight: bold;
+		color: $COLOR-DARK-BLUE-MIDDLE-lighter;
+		&_requisites {
+			color: $color-text-dark-middle-lighter;
+		}
+		&_phones {
+			a[href^="tel"] {
+				color: inherit;
+				text-decoration: none;
+				&:hover {
+					color: $COLOR-LIGHT-BLUE-MIDDLE;
+				}
+			}
+		}
+	}
+	&__list-wrap {
+		@include rem(0px);
+	}
+	&__item:not(:last-child) {
+		margin-bottom: 15px;
+	}
+	.expand-map {
+		content: '';
+		position: absolute;
+		z-index: 5;
+		padding: 15px;
+		width: 80px;
+		height: 32px;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		border-radius: 5px 5px 0 0;
+		background: url($icons + 'arrow-up-wide.svg') no-repeat center center $COLOR-DARK-BLUE-MIDDLE;
+		background-size: 25px;
+		cursor: pointer;
+	}
+}
